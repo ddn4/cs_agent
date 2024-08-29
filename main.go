@@ -29,7 +29,6 @@ func (dr *DiceRoller) Start() {
 		for dr.rolling {
 			select {
 			case <-dr.stopChan:
-				dr.rolling = false
 				return
 			default:
 				d1, d2, total = roll()
@@ -43,7 +42,7 @@ func (dr *DiceRoller) Start() {
 					fmt.Printf("You rolled %d 4s!\n", count)
 					count = 0
 				}
-				time.Sleep(2 * time.Second)
+				time.Sleep(250 * time.Millisecond)
 			}
 		}
 	}()
