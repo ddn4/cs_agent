@@ -23,3 +23,7 @@ go.work.sum
 
 # env file
 .env
+
+# binary
+cs_agent
+main
